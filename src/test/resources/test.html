@@ -1,0 +1,648 @@
+
+
+<!doctype html>
+<html class="no-js" lang="sv-SE" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQUGUVVXDBABV1lSBgEGUQ=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(15),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,n,e)])}catch(s){try{i("ierr",[s,c.now(),!0])}catch(u){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t){i("err",[t,c.now()])}var i=t("handle"),a=t(16),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),u=!0)}s.on("fn-start",function(t,n,e){u&&(d+=1)}),s.on("fn-err",function(t,n,e){u&&(this.thrown=!0,o(e))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var b=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof b&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof b&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(18)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(18)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(18)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(18)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",s)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(18)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];n.exports=u;var y=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(m,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!n.aborted){if(e.duration=a.now()-this.startTime,4===t.readyState){n.status=t.status;var i=o(t,this.lastSize);if(i&&(e.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(n.cat=c.split(", ").pop())}}else n.status=0;e.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[n,e,this.startTime])}}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return h(r)}function i(t,n){var e=c(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=h(r);i&&(e.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{f.emit("internal-error",[e])}catch(r){}}};for(var s=0;s<d;s++)n.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),f.on("xhr-load-added",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,n){var e=""+l(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],n)}),f.on("removeEventListener-end",function(t,n){n instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],n)}),f.on("fn-start",function(t,n,e){n instanceof m&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,n){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,n],n)})}},{}],11:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],12:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(15),s=t(16),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}finally{c.emit("fn-end",[f.now()],e)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],13:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],14:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],15:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],16:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],17:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],18:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=h(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[y[e]];return d&&d.push([g,e,r,a]),a}}function p(t,n){v[t]=h(t).concat(n)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(e)}function w(t,n){f(t,function(t,e){n=n||"feature",y[e]=n,n in u||(u[n]=[])})}var v={},y={},g={on:p,emit:e,get:m,listeners:h,context:n,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(15),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!x++){var t=b.info=NREUM.info,n=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(y,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=l.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(15),u=t("ee"),d=window,l=d.document,p="addEventListener",h="attachEvent",m=d.XMLHttpRequest,w=m&&m.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:m,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},g=m&&w&&w[p]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:v,features:{},xhrWrappable:g};t(12),l[p]?(l[p]("DOMContentLoaded",i,!1),d[p]("load",r,!1)):(l[h]("onreadystatechange",o),d[h]("onload",r)),c("mark",["firstbyte",s],null,"api");var x=0,E=t(17)},{}]},{},["loader",2,10,4,3]);</script>
+    <link rel="apple-touch-icon" sizes="180x180" href="http://www.tasteline.com/wp-content/themes/tasteline/dist/images/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="http://www.tasteline.com/wp-content/themes/tasteline/dist/images/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="http://www.tasteline.com/wp-content/themes/tasteline/dist/images/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="http://www.tasteline.com/wp-content/themes/tasteline/dist/images/favicons/manifest.json">
+    <link rel="mask-icon" href="http://www.tasteline.com/wp-content/themes/tasteline/dist/images/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="apple-mobile-web-app-title" content="Tasteline">
+    <meta name="application-name" content="Tasteline">
+    <meta name="theme-color" content="#ffffff">
+
+    <script>
+    function handleChange(orientationChanged) {
+      var meta;
+      var existing = document.getElementsByName('viewport');
+      if (existing.length) {
+        meta = existing[0];
+      }
+      else {
+        meta = document.createElement('meta');
+        meta.setAttribute('name', 'viewport');
+      }
+
+
+      var content = 'width=device-width, initial-scale=1';
+
+      if(window.screen && window.orientation && Math.abs(window.orientation) === 90) {
+        var size = Math.max(window.screen.width, window.screen.height);
+        if (size > 768 && size < 1200)
+          content = 'width=1200';
+      }
+
+      meta.setAttribute('content', content);
+
+      // Append the tag if it doesn't exist
+      if(existing.length === 0)
+        document.getElementsByTagName('head')[0].appendChild(meta);
+    }
+    handleChange();
+    window.addEventListener('orientationchange', function () { handleChange(true); });
+    window.addEventListener('resize', function () { handleChange(false); });
+
+  </script>
+    <title>Lammstek med citron och örter - Recept - Tasteline.com</title>
+
+    <!-- This site is optimized with the Yoast SEO Premium plugin v3.7.2 - https://yoast.com/wordpress/plugins/seo/ -->
+    <meta name="description" content="Lammstek med citron och örter är en vacker och himmelskt god varmrätt. Perfekt till helgen eller ett festligare tillfälle. Receptet hittar du här!"/>
+    <meta name="robots" content="noodp"/>
+    <meta property="og:locale" content="sv_SE" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Lammstek med citron och örter - Recept - Tasteline.com" />
+    <meta property="og:description" content="Lammstek med citron och örter är en vacker och himmelskt god varmrätt. Perfekt till helgen eller ett festligare tillfälle. Receptet hittar du här!" />
+    <meta property="og:site_name" content="Tasteline" />
+    <meta property="og:image" content="http://cdn1.tasteline.com/lammstek_med_citron_och_orter.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="903" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:description" content="Lammstek med citron och örter är en vacker och himmelskt god varmrätt. Perfekt till helgen eller ett festligare tillfälle. Receptet hittar du här!" />
+    <meta name="twitter:title" content="Lammstek med citron och örter - Recept - Tasteline.com" />
+    <meta name="twitter:image" content="http://cdn1.tasteline.com/lammstek_med_citron_och_orter.jpg" />
+    <meta property="DC.date.issued" content="2015-03-19T18:56:19+02:00" />
+    <!-- / Yoast SEO Premium plugin. -->
+
+    <link rel='dns-prefetch' href='//fonts.googleapis.com' />
+    <link rel='dns-prefetch' href='//s.w.org' />
+    <link rel='stylesheet' id='lato_css-css'  href='https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' type='text/css' media='all' />
+    <link rel='stylesheet' id='sage_css-css'  href='http://www.tasteline.com/wp-content/themes/tasteline/dist/styles/main-5533a3d8.css' type='text/css' media='all' />
+    <link rel='https://api.w.org/' href='http://www.tasteline.com/wp-json/' />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.tasteline.com/xmlrpc.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.tasteline.com/wp-includes/wlwmanifest.xml" />
+    <meta name="generator" content="WordPress 4.7.3" />
+    <link rel='shortlink' href='http://www.tasteline.com/?p=93899' />
+    <link rel="alternate" type="application/json+oembed" href="http://www.tasteline.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.tasteline.com%2Frecept%2Flammstek-med-citron-och-orter%2F" />
+    <link rel="alternate" type="text/xml+oembed" href="http://www.tasteline.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fwww.tasteline.com%2Frecept%2Flammstek-med-citron-och-orter%2F&#038;format=xml" />
+    <script type="text/javascript" src="//se-02.adtomafusion.com/fusion/0.9/latest/fusion-default.min.js"></script>
+    <script type="text/javascript">
+
+		var fusionConfig = {
+			adServer: "ads.tasteline.com:80",
+			mediaZone: "",
+			layout: ""
+		};
+
+		if ( window.screen.width < 678 ) {
+			fusionConfig.mediaZone = "mathem.tastelinecom.mobil.recept.recept";
+			fusionConfig.layout = "m_layout_recept";
+		} else {
+			fusionConfig.mediaZone = "mathem.tastelinecom.desktop.recept.recept";
+			fusionConfig.layout = "d_layout_recept";
+		}
+
+		var fusionParams = {
+			id: ["93899"],searchWord: [0],leverantor: [["97077"]],receptskapare: ["fernando di luca"],tillfalle: ["fest","ny\u00e5r","p\u00e5sk"],kok: [0],huvudtyp: ["mat"],typ_av_recept: ["stek"],klassiska_recept: [0],kosthallning: [0],typ_av_ratt: ["varmr\u00e4tt"],typ_av_bakverk: [0],typ_av_brod: [0],drinktyp: [0],spritsort: [0],smakprofil: [0],egennamn: [0],alkoholfri: [0],huvudingrediens: ["105199","lammstek"]
+		};
+		Fusion.loadAds(fusionConfig, fusionParams);
+
+		console.log(fusionParams);
+
+		var ad_fallback_similar_recipes = "http://cdn1.tasteline.com/MH_banner_wow_620x500px.jpg";
+
+		</script>
+    <script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"Recipe","url":"http:\/\/www.tasteline.com\/recept\/lammstek-med-citron-och-orter\/","name":"Lammstek med citron och \u00f6rter","image":"http:\/\/cdn1.tasteline.com\/lammstek_med_citron_och_orter-336x222.jpg","author":{"@type":"Person","name":"Fernando di Luca"},"datePublished":"2015-03-19","totalTime":"PT2H","prepTime":"PT2H","cookTime":"PT0M","description":"En saftig lammstek smakar gott. H\u00e4r fylld med citron och \u00f6rter. Receptet \u00e4r h\u00e4mtat fr\u00e5n boken \"Mitt medelhavsk\u00f6k\", (Massolit F\u00f6rlag).","aggregateRating":{"@type":"AggregateRating","ratingValue":4.14,"ratingCount":"173"},"nutrition":[],"recipeIngredient":["lammstek","citron(er)","vitl\u00f6k(ar)","bladpersilja","rosmarin","olivolja","salt","svartpeppar","steksn\u00f6re"]}</script><link rel="canonical" href="http://www.tasteline.com/recept/lammstek-med-citron-och-orter/"></head>
+<body class="recipe-template-default single single-recipe postid-93899 lammstek-med-citron-och-orter sidebar-primary" data-id="93899" data-login="4">
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-MFCNFK"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MFCNFK');</script>
+<!-- End Google Tag Manager -->
+<!--[if lt IE 8]>
+<div class="alert alert-warning">
+    Du använder en föråldrad webbläsare.
+</div>
+<![endif]-->
+<div id="site-body">
+    <header>
+        <div class="header-ad">
+            <div class="container">
+                <div data-fusion-space="panorama1"></div>
+                <div data-fusion-space="m_panorama1"></div>
+            </div>
+        </div>
+        <div class="main-menu">
+            <div class="container">
+                <a class="hamburger" href="javascript:void(0);">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <a class="brand" href="http://www.tasteline.com/">
+                    <img src="http://cdn1.tasteline.com/Tasteline_Logotyp_Svart.png" alt="Tasteline logo">
+                </a>
+
+                <div class="internetworld">
+                    <img src="http://www.tasteline.com/wp-content/themes/tasteline/dist/images/internetworld-2017.png" title="Topp 100 - Internetworld - 2017">
+                </div>
+
+                <a class="mobile-search" href="javascript:void(0);">
+                    <i class="fa fa-search"></i>
+                </a>
+
+                <nav role="navigation">
+                    <div class="menu-huvudmeny-container"><ul id="menu-huvudmeny" class="nav"><li id="menu-item-30174" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-30174"><a href="http://www.tasteline.com/recept/">Recept</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-30151" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-30151"><a href="http://www.tasteline.com/mat/">Matrecept</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-30193" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30193"><a href="http://www.tasteline.com/mat/typ-av-recept/">Typ av recept</a></li>
+                                    <li id="menu-item-30205" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30205"><a href="http://www.tasteline.com/recept/huvudingrediens/">Huvudingrediens</a></li>
+                                    <li id="menu-item-30206" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30206"><a href="http://www.tasteline.com/mat/tillagningssatt/">Tillagningssätt</a></li>
+                                    <li id="menu-item-30202" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30202"><a href="http://www.tasteline.com/mat/typ-av-ratt/">Typ av rätt</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-30154" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-30154"><a href="http://www.tasteline.com/baka/">Bakrecept</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-30225" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30225"><a href="http://www.tasteline.com/baka/bakverk/">Bakverk</a></li>
+                                    <li id="menu-item-30226" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30226"><a href="http://www.tasteline.com/baka/brod/">Bröd</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-30152" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-30152"><a href="http://www.tasteline.com/drinkar/">Drinkrecept</a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-30224" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30224"><a href="http://www.tasteline.com/drinkar/typ-av-drink/">Typ av drink</a></li>
+                                    <li id="menu-item-30223" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30223"><a href="http://www.tasteline.com/recept/spritsorter/">Spritsorter</a></li>
+                                    <li id="menu-item-30222" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30222"><a href="http://www.tasteline.com/drinkar/smakprofil/">Smakprofil</a></li>
+                                    <li id="menu-item-30221" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30221"><a href="http://www.tasteline.com/recept/alkoholfria-drinkar/">Alkoholfria drinkar</a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-30173" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30173"><a href="http://www.tasteline.com/kosthallning/">Kosthållning</a></li>
+                            <li id="menu-item-30172" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30172"><a href="http://www.tasteline.com/receptskapare/">Receptskapare</a></li>
+                            <li id="menu-item-30171" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-30171"><a href="http://www.tasteline.com/tillfalle/">Tillfälle</a></li>
+                            <li id="menu-item-100571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-100571"><a href="http://www.tasteline.com/recept/matkasse/">Recept från vår Matkasse</a></li>
+                        </ul>
+                    </li>
+                        <li id="menu-item-83710" class="menu-item menu-item-type-post_type_archive menu-item-object-drink menu-item-83710"><a href="http://www.tasteline.com/dryckesbloggen/">Dryck</a></li>
+                        <li id="menu-item-100853" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-100853"><a title="Tastelines matkassar" href="http://www.tasteline.com/matkasse/">Matkasse</a></li>
+                        <li id="menu-item-83644" class="menu-item menu-item-type-post_type_archive menu-item-object-inspiration menu-item-83644"><a href="http://www.tasteline.com/inspiration/">Inspiration</a></li>
+                        <li id="menu-item-83645" class="menu-item menu-item-type-post_type_archive menu-item-object-health menu-item-83645"><a href="http://www.tasteline.com/halsa/">Hälsa</a></li>
+                        <li id="menu-item-250487" class="menu-item menu-item-type-post_type_archive menu-item-object-weekly-menu menu-item-250487"><a href="http://www.tasteline.com/veckomenyer/">Veckomenyer</a></li>
+                        <li id="menu-item-14029" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-14029"><a href="http://www.tasteline.com/tasteline-play/">Tasteline play</a></li>
+                        <li id="menu-item-249231" class="hidden-md hidden-lg menu-item menu-item-type-post_type menu-item-object-page menu-item-249231"><a href="http://www.tasteline.com/matplaneraren/">Matplaneraren</a></li>
+                    </ul></div>      <div id="mobile_user_logged_in_menu" class="hidden-lg" style="display: none;">
+                    <div class="menu-mobilmeny-container"><ul id="menu-mobilmeny" class="nav"><li id="menu-item-246773" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-246773"><a href="http://www.tasteline.com/mina-sidor/">Mina sidor</a>
+                        <ul class="sub-menu">
+                            <li id="menu-item-246774" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-246774"><a href="http://www.tasteline.com/receptsamlingar/">Receptsamlingar</a></li>
+                            <li id="menu-item-246775" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-246775"><a href="http://www.tasteline.com/mina-sidor/mina-recept/">Mina recept</a></li>
+                            <li id="menu-item-246776" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-246776"><a href="http://www.tasteline.com/mina-sidor/andra-min-profil/">Ändra min profil</a></li>
+                            <li id="menu-item-246777" class="logout menu-item menu-item-type-custom menu-item-object-custom menu-item-246777"><a href="/">Logga ut</a></li>
+                        </ul>
+                    </li>
+                    </ul></div>        <input id="logout_url" type="hidden" value="http://www.tasteline.com/wp-login.php?action=logout&amp;redirect_to=%2F&amp;_wpnonce=e8c1238a50">
+                </div>
+                    <div class="mobile-action-bar hidden-lg clearfix">
+        <span id="mobile_user_logged_in" style="display: none;">
+          <a href="/mina-sidor/"><i class="fa fa-user"></i><span id="module_user_nickname"></span></a>
+        </span>
+                        <span id="mobile_user_logged_out" style="display: none;">
+          <a href="/inloggning/" class="col-xs-6"><i class="fa fa-lock"></i> Logga in</a>
+          <a href="/bli-medlem/" class="col-xs-6"><i class="fa fa-user"></i> Bli medlem</a>
+        </span>
+
+                    </div>
+                </nav>
+            </div>
+
+
+
+        </div>
+
+        <div class="search-bar open">
+            <div class="container">
+                <div class="search-box fa fa-search">
+                    <form action="http://www.tasteline.com/" id="searchform" method="get">
+                        <input class="search-input" type="search" id="s" name="s" placeholder="Sök recept eller annat innehåll" value="" required autocomplete="off"/>
+                        <input class="search-submit hidden-xs hidden-sm" type="submit" value="Sök">
+                    </form>
+                </div>
+                <div class="hidden-sm hidden-xs bar-login">
+			<span id="menu_user_logged_in" style="display: none;">
+				<a href="/mina-sidor/"><i class="fa fa-user"></i><span id="user_nickname"></span></a>
+			</span>
+                    <span id="menu_user_logged_out" style="display: none;">
+				<a href="/inloggning/"><i class="fa fa-lock"></i> Logga in</a>
+				<a href="/bli-medlem/"><i class="fa fa-user"></i> Bli medlem</a>
+			</span>
+                    <a rel="nofollow" href="http://www.tasteline.com/matplaneraren/" class="what-to-eat green"><i class="fa fa-cutlery" aria-hidden="true"></i> Matplaneraren</a>
+                </div>
+            </div>
+            <div class="container-fluid search-results-autocomplete">
+                <div class="container">
+                    <ul class="list-results"></ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="wrap" role="document">
+        <div class="container page-content clearfix">
+            <div class="breadcrumbs">
+                <a href='http://www.tasteline.com'>Hem</a> &gt; <a href='http://www.tasteline.com/recept/'>Recept</a> &gt; Lammstek med citron och örter</div>
+            <div class="row">
+                <div class="page-content-large">
+                    <div class="recipe-header">
+                        <div class="recipe-header-image" data-url="http://cdn1.tasteline.com/lammstek_med_citron_och_orter.jpg">
+                            <img src="http://cdn1.tasteline.com/lammstek_med_citron_och_orter-360x360.jpg" alt="Lammstek med citron" itemprop="image" />				<button class="zoom-in btn hidden green"><i class="fa fa-expand"></i></button>
+                            <span class="attribution">Foto: Bruno Ehrs</span>
+                        </div>
+                        <div class="recipe-description">
+                            <h1>Lammstek med citron och örter</h1>
+                            <span class="recipe-rating-holder" data-id="93899" data-vote="1"><span class="recipe-rating voting-enabled" title="Betyg: 4.1 Antal röster: 173" data-id="93899"><i class="fa fa-star-o highlight" data-grade="1"></i><i class="fa fa-star-o highlight" data-grade="2"></i><i class="fa fa-star-o highlight" data-grade="3"></i><i class="fa fa-star-o highlight" data-grade="4"></i><i class="fa fa-star-o" data-grade="5"></i><span class="recipe-rating-count">173 röster</span></span> </span>
+                            <span class="divider hidden-xs">|</span> 9 ingredienser
+                            <span class="divider">|</span> <i class="fa fa-clock-o"></i> 2 timmar 								<div class="recipe-ingress" itemprop="description">En saftig lammstek smakar gott. Här fylld med citron och örter. Receptet är hämtat från boken "Mitt medelhavskök", (Massolit Förlag).</div>
+                            <div class="category-list">
+                                <a class="category-value" href="http://www.tasteline.com/recept/fest/">fest</a><a class="category-value" href="http://www.tasteline.com/recept/i-ugn/">i ugn</a><a class="category-value" href="http://www.tasteline.com/recept/nyar/">nyår</a><a class="category-value" href="http://www.tasteline.com/recept/pask/">påsk</a><span class="category-value">stek</span><a class="category-value" href="http://www.tasteline.com/recept/varmratt/">Varmrätt</a><a class="category-value" href="http://www.tasteline.com/recept/lamm/">lammstek</a></div>				<button class="btn green scroll-to-ingredients visible-sm visible-xs">Visa ingredienser &amp; tillagning</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar ads hidden-xs hidden-sm">
+                    <div class="widget blur mathem">
+                        <div class="h2">Se inköpslista samt ingrediensernas pris</div>
+                        <button class="buy-mathem btn red">Köp receptet</button>
+                    </div>
+                </div>
+            </div><div class="popover-share-content">
+            <ul class="share-buttons">
+                <li><a title="Dela på Facebook" target="_blank" onclick="popupwindow('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL),600,300);"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+                <li><a title="Dela på Twitter" target="_blank" onclick="popupwindow('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20' + encodeURIComponent(document.URL),600,300);"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+                <li><a title="Dela på Pinterest" target="_blank" onclick="popupwindow('http://pinterest.com/pin/create/button/?url=' + encodeURIComponent(document.URL) + '&description=' +  encodeURIComponent(document.title),600,300);"><i class="fa fa-pinterest-square fa-2x"></i></a></li>
+                <li><a title="Dela med epost" target="_blank" onclick="popupwindow('mailto:?subject=' + encodeURIComponent(document.title) + '&body=' +  encodeURIComponent(document.URL),600,300); return false;"><i class="fa fa-envelope-square fa-2x"></i></a></li>
+                <li><a target="_blank" rel="nofollow" href="/print/recipe/93899/">
+                    <i class="fa fa-print fa-2x"></i></a></li>
+            </ul>
+        </div>
+
+            <ul class="recipe-action-bar">
+                <li class="recipe-action share-recipe" data-container="body" data-html="true" data-toggle="popover" data-placement="top" data-content="">
+                    <i class="fa fa-link"></i>
+                    <span class="hidden-xs">Dela recept</span>
+                    <span class="visible-xs">Dela</span>
+                </li>
+                <li class="recipe-action add-recipe-cookbook" data-id="93899">
+                    <i class="fa fa-heart"></i>
+                    <span class="hidden-xs">Spara recept</span>
+                    <span class="visible-xs">Spara</span>
+                </li>
+                <li class="recipe-action buy-mathem">
+                    <i class="fa fa-file-text"></i>
+                    <span class="hidden-xs">Köp receptet</span>
+                    <span class="visible-xs">Köp receptet</span>
+                </li>
+                <li class="recipe-action visible-lg">
+                    <a target="_blank" rel="nofollow" href="/print/recipe/93899/">
+                        <i class="fa fa-print"></i>Skriv ut
+                    </a>
+                </li>
+                <li class="recipe-action">
+                    <a href="/matplaneraren/?recipes=93899" rel="nofollow">
+                        <i class="fa fa-archive"></i>
+                        <span class="hidden-xs">Öppna i menyplaneraren</span>
+                        <span class="visible-xs">Menyplan.</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="page-content-large page-content-desktop">
+                    <div class="ad ad-large" id="ad-sokbanner">
+                        <div data-fusion-space="sokbanner"></div>
+                        <div data-fusion-space="m_sokbanner"></div>
+                    </div>	<div class="recipe-content">
+                    <div class="ingredients col-sm-4" data-base-units="{&quot;546f0225f2738b1ea03c4dd1&quot;:[{&quot;Id&quot;:&quot;54802fb26dbde2c5b261d212&quot;,&quot;RelationToBaseUnit&quot;:0.1,&quot;Name&quot;:&quot;hekto&quot;},{&quot;Id&quot;:&quot;546f0225f2738b1ea03c4dcf&quot;,&quot;RelationToBaseUnit&quot;:0.001,&quot;Name&quot;:&quot;gram&quot;},{&quot;Id&quot;:&quot;546f0225f2738b1ea03c4dd1&quot;,&quot;RelationToBaseUnit&quot;:1,&quot;Name&quot;:&quot;kg&quot;}],&quot;546f0226f2738b1ea03c4df6&quot;:[{&quot;Id&quot;:&quot;546f0226f2738b1ea03c4df6&quot;,&quot;RelationToBaseUnit&quot;:1,&quot;Name&quot;:&quot;meter&quot;},{&quot;Id&quot;:&quot;546f0225f2738b1ea03c4dd3&quot;,&quot;RelationToBaseUnit&quot;:0.01,&quot;Name&quot;:&quot;cm&quot;}],&quot;546f0225f2738b1ea03c4de8&quot;:[{&quot;Id&quot;:&quot;546f0225f2738b1ea03c4dcd&quot;,&quot;RelationToBaseUnit&quot;:0.1,&quot;Name&quot;:&quot;dl&quot;},{&quot;Id&quot;:&quot;546f0225f2738b1ea03c4de6&quot;,&quot;RelationToBaseUnit&quot;:0.01,&quot;Name&quot;:&quot;cl&quot;},{&quot;Id&quot;:&quot;546f0225f2738b1ea03c4de7&quot;,&quot;RelationToBaseUnit&quot;:0.001,&quot;Name&quot;:&quot;ml&quot;},{&quot;Id&quot;:&quot;546f0225f2738b1ea03c4de8&quot;,&quot;RelationToBaseUnit&quot;:1,&quot;Name&quot;:&quot;l&quot;}],&quot;546f0225f2738b1ea03c4dd0&quot;:[{&quot;Id&quot;:&quot;546f0225f2738b1ea03c4dd2&quot;,&quot;RelationToBaseUnit&quot;:0.3333,&quot;Name&quot;:&quot;tsk&quot;},{&quot;Id&quot;:&quot;546f0225f2738b1ea03c4dd4&quot;,&quot;RelationToBaseUnit&quot;:0.0667,&quot;Name&quot;:&quot;krm&quot;},{&quot;Id&quot;:&quot;546f0225f2738b1ea03c4dd0&quot;,&quot;RelationToBaseUnit&quot;:1,&quot;Name&quot;:&quot;msk&quot;}]}">
+                        <h2>Ingredienser</h2>
+                        <select class="portions" data-portions="4">
+                            <option value="1"  >1 portion</option>
+                            <option value="2"  >2 portioner</option>
+                            <option value="3"  >3 portioner</option>
+                            <option value="4" selected >4 portioner</option>
+                            <option value="5"  >5 portioner</option>
+                            <option value="6"  >6 portioner</option>
+                            <option value="7"  >7 portioner</option>
+                            <option value="8"  >8 portioner</option>
+                            <option value="9"  >9 portioner</option>
+                            <option value="10"  >10 portioner</option>
+                            <option value="11"  >11 portioner</option>
+                            <option value="12"  >12 portioner</option>
+                            <option value="13"  >13 portioner</option>
+                            <option value="14"  >14 portioner</option>
+                            <option value="15"  >15 portioner</option>
+                            <option value="16"  >16 portioner</option>
+                            <option value="17"  >17 portioner</option>
+                            <option value="18"  >18 portioner</option>
+                            <option value="19"  >19 portioner</option>
+                            <option value="20"  >20 portioner</option>
+                        </select>
+                        <div class="ingredient-group">
+                            <h3>Lamm</h3>
+
+                            <ul>
+                                <li>
+                                    <span class="quantity " data-quantity="1200">1200</span>
+                                    <span class="unit " data-unit-id="546f0225f2738b1ea03c4dcf" data-unit-name="gram">gram</span>
+
+                                    <a href="http://www.tasteline.com/recept/lamm/" class="ingredient"><span>lammstek</span></a><span>, urbenad</span>           </li>
+                                <li>
+                                    <span class="quantity " data-quantity="1">1</span>
+                                    <span class="unit " data-unit-id="546f0225f2738b1ea03c4dce" data-unit-name="st">st</span>
+
+                                    <a href="http://www.tasteline.com/ingrediens/citroner/" class="ingredient"><span>citron(er)</span></a><span>, rivet skal</span>           </li>
+                                <li>
+                                    <span class="quantity " data-quantity="2.5">2,5</span>
+                                    <span class="unit " data-unit-id="546f0226f2738b1ea03c4df7" data-unit-name="klyfta(or)">klyfta(or)</span>
+
+                                    <a href="http://www.tasteline.com/ingrediens/vitlokar/" class="ingredient"><span>vitlök(ar)</span></a>           </li>
+                                <li>
+                                    <span class="quantity " data-quantity="0.5">0,5</span>
+                                    <span class="unit " data-unit-id="546f0225f2738b1ea03c4dcd" data-unit-name="dl">dl</span>
+
+                                    <a href="http://www.tasteline.com/ingrediens/bladpersilja/" class="ingredient"><span>bladpersilja</span></a><span>, hackad, ca. 3 msk</span>           </li>
+                                <li>
+                                    <span class="quantity " data-quantity="0.5">0,5</span>
+                                    <span class="unit " data-unit-id="546f0225f2738b1ea03c4dcd" data-unit-name="dl">dl</span>
+
+                                    <a href="http://www.tasteline.com/ingrediens/rosmarin/" class="ingredient"><span>rosmarin</span></a><span>, hackad, ca. 3 msk</span>           </li>
+                                <li>
+                                    <span class="quantity " data-quantity="2">2</span>
+                                    <span class="unit " data-unit-id="546f0225f2738b1ea03c4dd0" data-unit-name="msk">msk</span>
+
+                                    <a href="http://www.tasteline.com/ingrediens/olivolja/" class="ingredient"><span>olivolja</span></a><span>, extravergine</span>           </li>
+                                <li>
+                                    <span class="quantity " data-quantity="1">1</span>
+                                    <span class="unit " data-unit-id="546f0225f2738b1ea03c4dd0" data-unit-name="msk">msk</span>
+
+                                    <a href="http://www.tasteline.com/ingrediens/salt/" class="ingredient"><span>salt</span></a>           </li>
+                                <li>
+                                    <span class="quantity " data-quantity="1">1</span>
+                                    <span class="unit " data-unit-id="546f0225f2738b1ea03c4dd2" data-unit-name="tsk">tsk</span>
+
+                                    <a href="http://www.tasteline.com/ingrediens/svartpeppar/" class="ingredient"><span>svartpeppar</span></a>           </li>
+                            </ul>
+                        </div>
+                        <div class="ingredient-group">
+                            <h3>Redskap</h3>
+
+                            <ul>
+                                <li>
+                                    <span class="quantity " data-quantity="1">1</span>
+                                    <span class="unit " data-unit-id="546f0225f2738b1ea03c4dce" data-unit-name="st">st</span>
+
+                                    <a href="http://www.tasteline.com/ingrediens/steksnore/" class="ingredient"><span>steksnöre</span></a>           </li>
+                            </ul>
+                        </div>
+
+                        <div class="btn-wrapper">
+                            <div class="buy-mathem btn green btn-full">
+                                Köp receptet
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="steps col-sm-8">
+                        <h2>Tillagning</h2>
+
+                        <!--<div class="step-group ">-->
+                        <div class="step-group">
+
+                            <ul>
+                                <li>1. Sätt ugnen på 175 grader.</li>
+                                <li>2. Ta bort nätet från steken och fläk ut den. Putsa till den om det behövs så att du har ett ganska jämnt stycke. Salta och peppra ordentligt runt om.</li>
+                                <li>3. Riv skalet från citronen, skala och riv vitlöken och blanda med de hackade örterna. Fördela det över köttet och rulla ihop till en tajt rulle. Bind upp hårt med steksnöre.</li>
+                                <li>4. Hetta upp oljan i en panna och bryn köttet hastigt runtom så att det får lite färg.</li>
+                                <li>5. Lägg steken i en ugnsform och ställ in i mitten av ugnen. Stek till en innertemperatur på 58–60 grader beroende på hur du vill ha det – då får du ett rosarött saftigt kött.</li>
+                                <li>6. Ta ut och låt steken vila 10 minuter innan du tar bort steksnöret och skivar upp köttet.
+                                    <br><br>Hitta inspiration bland Tastelines <a href="http://www.tasteline.com/recept/lamm/"> alla recept med lamm</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="row">
+
+
+                            <div class="recipe-author col-xs-12">
+
+
+
+                                <div class="no-image">Recept:<br><span>Fernando di Luca</span></div>
+
+
+                            </div>
+
+
+
+
+                        </div>
+                        <div class="row">
+                            <div class="supplier col-md-12">
+                                <p>Receptet är från:</p>
+
+
+                                <a href="/foretag/tasteline/" title="Fler recept från Tasteline" class="supplier-image">
+
+
+                                    <img src='http://cdn1.tasteline.com/Tasteline_Logotyp_Svart.png' /></a>
+
+
+                                </a>
+
+
+                            </div>
+                        </div>
+
+
+                    </div>	</div>
+
+                    <div class="comment">
+                        <div class="banner comments-show-all">
+                            <h2><i class="fa fa-comments"></i><span class="disqus-comment-count" data-disqus-url="http://www.tasteline.com/recept/lammstek-med-citron-och-orter/"></span></h2>
+                            <div id="disqus_thread"></div>
+                        </div>
+
+                    </div>
+                    <div class="similar-recipe">
+                        <div class="loading">
+                            <div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar widgets recipe-widgets">
+                    <div class="sidebar-advertorial">
+                        <div id="ad-advertorial1" class="side-advertorial">
+                            <div data-fusion-space="advertpuff1"></div>
+                            <div data-fusion-space="m_advertpuff1"></div>
+                        </div>
+                        <div id="ad-advertorial2" class="side-advertorial">
+                            <div data-fusion-space="advertpuff2"></div>
+                            <div data-fusion-space="m_advertpuff2"></div>
+                        </div>
+                    </div><div class="block-title">Inspiration</div><ul class="article-feed margin-top">
+                    <li class="article related">
+                        <a href="http://www.tasteline.com/inspiration/koksknep/vaga-laga-lamm/">
+                            <div class="image">
+                                <img src="http://cdn1.tasteline.com/lammstek_med_citron_och_orter-620x410.jpg" alt="Lammstek med citron" />					<div class="bg-image visible-xs visible-sm" style="background-image: url(http://cdn1.tasteline.com/lammstek_med_citron_och_orter-336x222.jpg);"></div>
+                            </div>
+                            <div class="content">
+                                <div class="category">Inspiration</div>
+                                <h2>Våga laga lamm</h2>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="article related">
+                        <a href="http://www.tasteline.com/inspiration/hogtider/pask/paskfirande-med-lamm/">
+                            <div class="image">
+                                <img src="http://cdn1.tasteline.com/MG_0245-620x410.jpg" alt="Chililammstek" />					<div class="bg-image visible-xs visible-sm" style="background-image: url(http://cdn1.tasteline.com/MG_0245-336x222.jpg);"></div>
+                            </div>
+                            <div class="content">
+                                <div class="category">Inspiration</div>
+                                <h2>Påskfirande med lamm</h2>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="article related">
+                        <a href="http://www.tasteline.com/inspiration/fest/latmanslyx/">
+                            <div class="image">
+                                <img src="http://cdn1.tasteline.com/Potatissallad-med-sparris-v20-620x410.jpg" alt="potatissallad med rostbiff" />					<div class="bg-image visible-xs visible-sm" style="background-image: url(http://cdn1.tasteline.com/Potatissallad-med-sparris-v20-336x222.jpg);"></div>
+                            </div>
+                            <div class="content">
+                                <div class="category">Inspiration</div>
+                                <h2>Genvägarna till festen</h2>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="article related">
+                        <a href="http://www.tasteline.com/inspiration/fest/mellofinal-med-trendig-texmex/">
+                            <div class="image">
+                                <img src="http://cdn1.tasteline.com/Beef-chili-620x410.jpg" alt="Beef chili" />					<div class="bg-image visible-xs visible-sm" style="background-image: url(http://cdn1.tasteline.com/Beef-chili-336x222.jpg);"></div>
+                            </div>
+                            <div class="content">
+                                <div class="category">Inspiration</div>
+                                <h2>Mello med trendig texmex</h2>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="article related">
+                        <a href="http://www.tasteline.com/inspiration/hogtider/pask/masten-pa-paskbordet/">
+                            <div class="image">
+                                <img src="http://cdn1.tasteline.com/Var08_pask-69r-620x410.jpg" alt="påskliljor, påsk, blommor" />					<div class="bg-image visible-xs visible-sm" style="background-image: url(http://cdn1.tasteline.com/Var08_pask-69r-336x222.jpg);"></div>
+                            </div>
+                            <div class="content">
+                                <div class="category">Inspiration</div>
+                                <h2>Påsk &#8211; recept, pyssel &#038; inspiration inför påskhelgen</h2>
+                            </div>
+                        </a>
+                    </li>
+
+
+                </ul></div>
+                <div class="hidden-xs hidden-sm sidebar widgets recipe-ad-widgets">
+                    <div id="ad-insider1" class="side-ad-1">
+                        <div data-fusion-space="tws1"></div>
+                        <div data-fusion-space="m_tws1"></div>
+                    </div>
+                    <div id="ad-insider2" class="side-ad-2">
+                        <div data-fusion-space="tws2"></div>
+                        <div data-fusion-space="m_tws2"></div>
+                    </div>
+                </div>
+
+                <div class="page-content-large page-content-tablet-small">
+
+                </div>
+
+            </div>
+        </div>    </div><!-- /.wrap -->
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4 col-md-offset-0 col-sm-offset-3 hidden-xs hidden-sm">
+                        <a href="http://www.tasteline.com/">
+                            <img src="http://cdn1.tasteline.com/Tasteline_Logotyp_Svart.png">
+                        </a>
+                        <p><p>Sök recept, mat, vin och drinkar på Tasteline.com.</p>
+                        </p>
+                    </div>
+                    <div class=" col-md-8">
+                        <div class="row">
+                            <div class="col-sm-4  col-xs-6">
+                                <h3>Innehåll</h3>
+                                <ul>
+                                    <li><a href="/recept/">Recept</a></li>
+                                    <li><a href="/inspiration/">Inspiration</a></li>
+                                    <li><a href="/matplaneraren/">Vad ska jag äta?</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4  col-xs-6">
+                                <h3>Kontakt</h3>
+                                <ul>
+                                    <li><a href="/kontakta-oss/">Kontakta oss</a></li>
+                                    <li><a href="/annonsera/">Annonsera</a></li>
+                                    <li><a href="/om-webbplatsen/">Om webbplatsen</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-4 hidden-xs">
+                                <h3>Mina sidor</h3>
+
+                                <div id="footer_user_logged_in" style="display: none;">
+
+                                    <ul>
+                                        <li><a href="/mina-sidor/mina-recept/">Mina recept</a></li>
+                                        <li><a href="/mina-sidor/receptsamlingar/">Receptsamlingar</a></li>
+                                        <li><a href="/mina-sidor/andra-min-profil/">Min profil</a></li>
+                                    </ul>
+
+                                </div>
+
+                                <div id="footer_user_logged_out" style="display: none;">
+
+                                    <ul>
+                                        <li><a href="/inloggning/">Logga in</a></li>
+                                        <li><a href="/bli-medlem/">Bli medlem</a></li>
+                                    </ul>
+
+                                </div>
+                            </div>
+
+                            <div class="footer-member col-xs-12 visible-xs">
+							<span id="mobile_footer_user_logged_out" style="display: none;">
+								<a href="/bli-medlem/" class="btn green">Bli medlem</a>
+								<a href="/inloggning/" class="btn gray">Logga in</a>
+							</span>
+                                <span id="mobile_footer_user_logged_in" style="display: none;">
+								<h3>Mina sidor</h3>
+								<a href="/mina-sidor/mina-recept/" class="btn gray">Mina recept</a>
+								<a href="/mina-sidor/receptsamlingar/" class="btn gray">Receptsamlingar</a>
+								<a href="/mina-sidor/andra-min-profil/" class="btn gray">Min profil</a>
+							</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">Copyright 2017 Tasteline. All rights reserved.</div>
+    </footer>    </div>
+<script>Fusion.apply(document.getElementById("site-body"));</script><script type='text/javascript' src='http://www.tasteline.com/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='http://www.tasteline.com/wp-content/themes/tasteline/dist/scripts/modernizr-2cd3c0e8.js'></script>
+<script type='text/javascript' src='http://www.tasteline.com/wp-content/themes/tasteline/dist/scripts/main-be93ea6c.js'></script>
+<script type='text/javascript' src='http://www.tasteline.com/wp-content/themes/tasteline/dist/scripts/jquery-ui-a03af751.js'></script>
+<script type='text/javascript' src='http://www.tasteline.com/wp-includes/js/wp-embed.min.js?ver=4.7.3'></script>
+<script id="dsq-count-scr" src="//tasteline.disqus.com/count.js" async></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"1396e77b3d","applicationID":"13801017","transactionName":"ZAQENRNXV0dVAUNcWV1OMxMIGVBaUAdPG0ZbEQ==","queueTime":0,"applicationTime":1090,"atts":"SEMHQ1tNREk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+<!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Minified using disk
+
+ Served from: www.tasteline.com @ 2017-05-29 12:35:54 by W3 Total Cache -->
