@@ -7,4 +7,8 @@ public class Quantity {
     public String id;
 
     public String name;
+
+    public Quantity (String name) {
+        this.name = name;
+    }
 }
