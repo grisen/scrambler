@@ -26,25 +26,35 @@ public class ScramblerApplicationTests {
 	@Autowired
 	private IngredientMapper ingredientMapper;
 
+	@Autowired
+	private IngredientRepository ingredientRepository;
+
 	@Test
 	public void getUrl() throws IOException {
 
-		File file = new File("src/test/resources/test.html");
-
-		Document doc = Jsoup.parse(file, "UTF-8");
-
-		Elements elemtents = new URLHandler().invoke(urlString);
+		Elements elemtents = getTestRecepie();//= new URLHandler().invoke(urlString);
 
 		Assert.assertNotEquals(0, elemtents.size());
 	}
 
+	private Elements getTestRecepie() throws IOException {
+		File file = new File("src/test/resources/test.html");
+
+		return Jsoup.parse(file, "UTF-8").getAllElements();
+	}
+
 	@Test
 	public void mapIngredient() throws IOException {
-		Elements elements = URLHandler.invoke(urlString);
+		Elements elements = getTestRecepie();
 
-		elements.select(".ingredient").forEach(i-> ingredientMapper.map(i.text()));
+		elements.select(".ingredient").forEach(i-> ingredientMapper.mapIngredient(i.text()));
 		elements.select(".quantity").forEach(i-> mapAndSaveUnits(i.text()));
 		elements.select(".unit").forEach(i-> mapAndSaveQuantitys(i.text()));
+
+		ingredientRepository.findAll().forEach(i -> System.out.println(i.name));
+		Assert.assertNotEquals(0, ingredientRepository.findAll().size());
+
+		ingredientRepository.deleteAll();
 	}
 
 	private void getQuantity(Element e) {

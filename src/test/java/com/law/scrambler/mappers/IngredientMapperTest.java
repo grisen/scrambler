@@ -26,8 +26,8 @@ public class IngredientMapperTest {
     public void map() throws Exception {
         Ingredient ingredient = new Ingredient("test");
 
-        ingredientMapper.map(ingredient.name);
-        ingredientMapper.map(ingredient.name);
+        ingredientMapper.mapIngredient(ingredient.name);
+        ingredientMapper.mapIngredient(ingredient.name);
 
         List list = (List<Ingredient>)ingredientRepository.findAllByName(ingredient.name);
 
