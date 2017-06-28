@@ -1,7 +1,31 @@
 package com.law.scrambler.mappers;
 
-/**
- * Created by root on 2017-05-30.
- */
-public class QuantityMapper  {
+
+import com.law.scrambler.entities.Ingredient;
+import com.law.scrambler.entities.Quantity;
+import com.law.scrambler.repositories.QuantityRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class QuantityMapper extends Mapper {
+
+    @Autowired
+    QuantityRepository quantityRepository;
+
+    @Override
+    public void mapIngredient(String quantity) {
+        if (quantityRepository.findByName(quantity) == null) {
+            quantityRepository.save(new Quantity(quantity));
+        }
+    }
+
+    @Override
+    void mapQuantity(String quantity) {
+
+    }
+
+    @Override
+    void mapUnit(String unit) {
+
+    }
+
 }

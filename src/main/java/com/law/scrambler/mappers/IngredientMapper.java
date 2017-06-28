@@ -6,11 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-/**
- * Created by root on 2017-05-30.
- */
 @Service
-public class IngredientMapper implements Mapper{
+public class IngredientMapper extends Mapper{
 
     @Autowired
     private IngredientRepository ingredientRepository;
@@ -19,15 +16,21 @@ public class IngredientMapper implements Mapper{
 
     }
 
-    public void map(String name) {
-        if (ingredientRepository.findByName(name) == null) {
-            ingredientRepository.save(new Ingredient(name));
+    @Override
+    public void mapIngredient(String ingredient) {
+        if (ingredientRepository.findByName(ingredient) == null) {
+            ingredientRepository.save(new Ingredient(ingredient));
         }
+    }
 
+    @Override
+    void mapQuantity(String quantity) {
 
-        //System.out.println("INGREDIENTS!!!");
+    }
 
-        //ingredientRepository.findAll().forEach(i -> System.out.println(i.name));
+    @Override
+    void mapUnit(String unit) {
+
     }
 
 }

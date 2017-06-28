@@ -1,11 +1,10 @@
 package com.law.scrambler.mappers;
 
-/**
- * Created by root on 2017-06-07.
- */
-public interface Mapper
+public abstract class Mapper
 {
 
-    default void map(String name) {};
+    public abstract void mapIngredient(String ingredient);
+    abstract void mapQuantity(String quantity);
+    abstract void mapUnit(String unit);
 
 }
