@@ -8,7 +8,7 @@ import java.io.IOException;
 
 
 public class URLHandler {
-    public static Elements invoke(String urlString) {
+    public static Elements invoke(String urlString, String begin) {
 
         Document document = null;
         try {
@@ -16,7 +16,7 @@ public class URLHandler {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return document.select("div[class=\"ingredient-group\"]");
+        return document.select(begin);
     }
 
 }

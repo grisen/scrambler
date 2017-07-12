@@ -38,7 +38,7 @@ public class ScramblerApplicationTests {
 	}
 
 	private Elements getTestRecepie() throws IOException {
-		File file = new File("src/test/resources/test.html");
+		File file = new File("src/test/resources/tastelinetest.html");
 
 		return Jsoup.parse(file, "UTF-8").getAllElements();
 	}

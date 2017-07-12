@@ -7,6 +7,7 @@ import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
@@ -15,8 +16,12 @@ public abstract class MainScrambler {
     @Autowired
     Mapper mapper;
 
-    public Elements getElements(String recepieUrl) {
-        return URLHandler.invoke(recepieUrl);
+    protected List quantityList = new ArrayList();
+    protected List unitList = new ArrayList();
+    protected List ingredientList = new ArrayList();
+
+    public Elements getElements(String recepieUrl, String begin) {
+        return URLHandler.invoke(recepieUrl, begin);
     };
 
 

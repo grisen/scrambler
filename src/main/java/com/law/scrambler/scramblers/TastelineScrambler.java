@@ -13,9 +13,11 @@ import java.util.List;
 @Component
 public class TastelineScrambler extends MainScrambler {
 
+    private static String begin= "div[class=\"ingredient-group\"]";
+
     @Override
     public RecepieDTO processRecepie(String recepieUrl) {
-        Elements elements = getElements(recepieUrl);
+        Elements elements = getElements(recepieUrl, begin);
 
         List ingredients = getIngredients(elements);
         List quantitys = getQuantitys(elements);
@@ -26,7 +28,7 @@ public class TastelineScrambler extends MainScrambler {
 
     protected List getIngredients(Elements elements) {
 
-        List ingredientList = new ArrayList();
+        ingredientList = new ArrayList();
         elements.select(".ingredient").forEach(i-> ingredientList.add(i.text()));
 
         return ingredientList;
@@ -34,7 +36,7 @@ public class TastelineScrambler extends MainScrambler {
 
     protected List getUnits(Elements elements) {
 
-        List unitList = new ArrayList();
+        unitList = new ArrayList();
         elements.select(".unit").forEach(i-> unitList.add(i.text()));
 
         return unitList;
@@ -42,7 +44,7 @@ public class TastelineScrambler extends MainScrambler {
 
     protected List getQuantitys(Elements elements) {
 
-        List quantityList = new ArrayList();
+        quantityList = new ArrayList();
         elements.select(".quantity").forEach(i-> quantityList.add(i.text()));
 
         return quantityList;
