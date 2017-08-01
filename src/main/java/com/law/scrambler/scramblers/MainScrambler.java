@@ -31,11 +31,6 @@ public abstract class MainScrambler {
     };
 
 
-    protected void mapAndSave(RecepieDTO dto) {
-        dto.ingredients.forEach(i -> mapper.map(i.toLowerCase()));
-
-    };
-
     protected String wash(Element i) {
         return Pattern.compile(" ").splitAsStream(i.text())
                 .filter(s -> !Character.isDigit(s.charAt(0)) && !unitList.contains(s) && !reservedWords.contains(s))
