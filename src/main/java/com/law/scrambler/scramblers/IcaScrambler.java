@@ -5,8 +5,6 @@ import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 /**
  * Created by root on 2017-07-12.
@@ -30,14 +28,8 @@ public class IcaScrambler extends MainScrambler {
     protected List getIngredients(Elements elements) {
         ingredientList = new ArrayList();
         elements.select(".ingredient").forEach(i-> {
-
-            String collect = Pattern.compile(" ").splitAsStream(i.text())
-                    .filter(s -> !Character.isDigit(s.charAt(0)) && !unitList.contains(s))
-                    .collect(Collectors.joining(" "));
-
-            ingredientList.add(collect);
+            ingredientList.add(wash(i));
         });
-
         return ingredientList;
     }
 

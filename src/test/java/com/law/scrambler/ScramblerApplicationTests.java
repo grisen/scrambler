@@ -1,10 +1,8 @@
 package com.law.scrambler;
 
-import com.law.scrambler.entities.Ingredient;
 import com.law.scrambler.mappers.IngredientMapper;
 import com.law.scrambler.repositories.IngredientRepository;
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.junit.Assert;
@@ -47,7 +45,7 @@ public class ScramblerApplicationTests {
 	public void mapIngredient() throws IOException {
 		Elements elements = getTestRecepie();
 
-		elements.select(".ingredient").forEach(i-> ingredientMapper.mapIngredient(i.text()));
+		elements.select(".ingredient").forEach(i-> ingredientMapper.map(i.text()));
 		elements.select(".quantity").forEach(i-> mapAndSaveUnits(i.text()));
 		elements.select(".unit").forEach(i-> mapAndSaveQuantitys(i.text()));
 
