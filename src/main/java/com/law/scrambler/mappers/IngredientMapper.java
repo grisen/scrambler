@@ -17,7 +17,7 @@ public class IngredientMapper extends Mapper{
     }
 
     @Override
-    public void mapIngredient(String ingredient) {
+    public void map(String ingredient) {
         if (ingredientRepository.findByName(ingredient) == null) {
             ingredientRepository.save(new Ingredient(ingredient));
         }
