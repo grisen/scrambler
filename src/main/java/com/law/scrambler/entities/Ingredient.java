@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.index.Indexed;
 public class Ingredient {
 
     @Id
-    public String id;
+    public Long id;
 
     @Indexed
     public String name;

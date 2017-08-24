@@ -2,17 +2,19 @@ package com.law.scrambler.entities;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.ArrayList;
+
 public class ShoppingRow {
 
     @Id
-    public String id;
+    public Long id;
 
-    public String ingredientId;
+    public ArrayList ingredients;
 
-    public String quantityId;
+    public ArrayList quantitys;
 
-    public String unitId;
+    public ArrayList units;
 
-    public String recipeId;
+    public Long recipeId;
 
 }

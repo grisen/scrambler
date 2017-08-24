@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 @Component
 public class TastelineScrambler extends MainScrambler {
@@ -43,11 +45,7 @@ public class TastelineScrambler extends MainScrambler {
     }
 
     protected List getQuantitys(Elements elements) {
-
-        quantityList = new ArrayList();
-        elements.select(".quantity").forEach(i-> quantityList.add(i.text()));
-
-        return quantityList;
+        return elements.select(".quantity").stream().map(i -> i.text()).collect(Collectors.toList());
     }
 
     @Override

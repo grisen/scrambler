@@ -4,7 +4,7 @@ import org.springframework.data.annotation.Id;
 
 public class Quantity {
     @Id
-    public String id;
+    public Long id;
 
     public String name;
 
